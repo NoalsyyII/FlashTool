@@ -1,2 +1,2 @@
 # FlashTool
-Flash-card application
+A simple flash-card application
