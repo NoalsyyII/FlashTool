@@ -27,8 +27,9 @@ def createNewCard() -> Card:
     
     return newCard
 
-open("data", "wb")
-cardDeck = []
+inpfile = open("data", "rb")
+cardDeck = pickle.load(inpfile)
+inpfile.close()
 
 while True:
     
@@ -63,9 +64,12 @@ while True:
                 cardDeck.append(cardToAdd)
             else:
                 break
+        inpfile = open("data", "wb")
+        pickle.dump(cardDeck, inpfile)
+        inpfile.close()
         continue
-    
+        
     else:
-        print("err")
+        print("Exiting...")
         break
         
