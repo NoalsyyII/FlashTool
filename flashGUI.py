@@ -18,6 +18,11 @@ def createNewCard() -> Card:
 
     return newCard
 
+def checkAnswer():
+    ans = answerBox.get()
+    if ans == createNewCard():
+        pass
+
 # inpfile = open("data", "rb")
 # cardDeck = pickle.load(inpfile)
 # inpfile.close()
@@ -38,6 +43,7 @@ def studyMode(*args, **kwargs):
         studyWin.title(f"Question {i} of {len(cardDeck)}")
         questionLabel = tk.Label(text=c.question)
         answerLabel = tk.Label(text=c.answer)
+        global answerBox 
         answerBox = tk.Entry()
         checkAnsButt = tk.Button(text="Check Answer")
         questionLabel.pack()
